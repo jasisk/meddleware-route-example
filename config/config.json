@@ -1,0 +1,31 @@
+{
+    "middleware": {
+        "appsec": {
+            "priority": 110,
+            "module": {
+                "name": "lusca",
+                "arguments": [
+                    {
+                        "csrf": false,
+                        "xframe": "SAMEORIGIN",
+                        "p3p": false,
+                        "csp": false
+                    }
+                ]
+            }
+        },
+        "appsecprotect": {
+            "route": "/protect",
+            "enabled": true,
+            "priority": 111,
+            "module": {
+                "name": "lusca",
+                "arguments": [
+                    {
+                        "csrf": true
+                    }
+                ]
+            }
+        }
+    }
+}
